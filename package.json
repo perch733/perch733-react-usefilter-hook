@@ -1,0 +1,62 @@
+{
+  "name": "@perch733/react-usefilter-hook",
+  "version": "1.0.0",
+  "description": "A lightweight and reusable React hook for filtering lists with accent normalization, punctuation removal and TypeScript support.",
+  "main": "dist/cjs/index.min.js",
+  "module": "dist/esm/index.min.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.min.js",
+      "require": "./dist/cjs/index.min.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/cjs",
+    "dist/esm",
+    "dist/types"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && terser dist/cjs/index.js -o dist/cjs/index.min.js --compress --mangle && terser dist/esm/index.js -o dist/esm/index.min.js --compress --mangle"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "filter",
+    "usefilter",
+    "search",
+    "list filter",
+    "normalization",
+    "typescript",
+    "frontend",
+    "react hook",
+    "filter hook"
+  ],
+  "author": "Percy Chuzon <contacto@percychuzon.com>",
+  "license": "MIT",
+  "homepage": "https://react-usefilter-hook.percychuzon.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perch733/perch733-react-usefilter-hook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/perch733/perch733-react-usefilter-hook/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "terser": "^5.39.2"
+  }
+}
