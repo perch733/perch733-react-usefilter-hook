@@ -1,4 +1,4 @@
-# @perch733/react-usefilter-hook
+# @perch33/react-usefilter-hook
 
 A lightweight and reusable React hook for filtering lists with accent normalization, punctuation removal, and TypeScript support.  
 Ideal for search bars, dynamic lists, admin dashboards, e-commerce filters, etc.
@@ -20,20 +20,20 @@ Ideal for search bars, dynamic lists, admin dashboards, e-commerce filters, etc.
 ## 📦 Installation
 
 ```sh
-npm install @perch733/react-usefilter-hook
+npm install @perch33/react-usefilter-hook
 ```
 
 or
 
 ```sh
-yarn add @perch733/react-usefilter-hook
+yarn add @perch33/react-usefilter-hook
 
 ```
 
 ## 🚀 Usage Example (Basic)
 
 ```tsx
-import { useFilter } from "@perch733/react-usefilter-hook";
+import { useFilter } from "@perch33/react-usefilter-hook";
 
 const products = [
   { title: "Cámara Fotográfica" },
