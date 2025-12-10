@@ -3,6 +3,11 @@
 A lightweight and reusable React hook for filtering lists with accent normalization, punctuation removal, and TypeScript support.  
 Ideal for search bars, dynamic lists, admin dashboards, e-commerce filters, etc.
 
+![npm](https://img.shields.io/npm/v/@perch33/react-usefilter-hook)
+![downloads](https://img.shields.io/npm/dm/@perch33/react-usefilter-hook)
+![license](https://img.shields.io/npm/l/@perch33/react-usefilter-hook)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
+
 ---
 
 ## 🔥 Features
