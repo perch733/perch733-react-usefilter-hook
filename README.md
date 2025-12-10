@@ -32,7 +32,6 @@ or
 
 ```sh
 yarn add @perch33/react-usefilter-hook
-
 ```
 
 ## 🚀 Usage Example (Basic)
@@ -121,31 +120,37 @@ useFilter<T>(data, key, errorComponent);
 ### ⚙️ How filtering works
 
 - This hook automatically:
-
 - Converts text to lowercase
-
 - Removes accents (áéíóú → aeiou)
-
 - Removes punctuation and special characters
-
 - Performs a normalized comparison
-
 - Filters in real time as the user types
+
+---
+
+## 🔍 Used in Production (Real Examples)
+
+This hook is currently used in my personal website:
+
+- 🎼 **Music Scores / Partituras**  
+  Live search using `useFilter` to filter music scores dynamically.  
+  👉 https://www.percychuzon.com/partituras
+
+- ✍️ **Blog**  
+  Used to filter blog posts instantly with accent-insensitive matching.  
+  👉 https://www.percychuzon.com/blog
+
+These sections demonstrate real-world usage of the hook with dynamic content,  
+search inputs, and accent-normalized filtering.
 
 ### 💡 When to use this hook?
 
 - Product search inputs
-
 - Admin panel filters
-
 - Searchable dropdowns
-
 - User lists
-
 - Blog post search
-
 - Table filtering
-
 - Autocomplete components
 
 ## 📁 Project Structure
@@ -153,7 +158,6 @@ useFilter<T>(data, key, errorComponent);
 Your installation will contain:
 
 ```
-
 dist/
   ├─ cjs/
   ├─ esm/
@@ -166,4 +170,4 @@ README.md
 
 **Percy Chuzon**
 📧 [contacto@percychuzon.com](mailto:contacto@percychuzon.com)
-🌐 [https://wwww.percychuzon.com](https://www.percychuzon.com)
+🌐 [https://www.percychuzon.com](https://www.percychuzon.com)

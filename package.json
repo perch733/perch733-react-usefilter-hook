@@ -1,6 +1,6 @@
 {
   "name": "@perch33/react-usefilter-hook",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight and reusable React hook for filtering lists with accent normalization, punctuation removal and TypeScript support.",
   "main": "dist/cjs/index.min.js",
   "module": "dist/esm/index.min.js",
