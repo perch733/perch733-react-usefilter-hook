@@ -48,10 +48,10 @@ const products = [
 ];
 
 export default function App() {
-  const { filterText, filteredData, handleFilterChange } = useFilter(
+  const { filterText, filteredData, error, handleFilterChange } = useFilter(
     products,
     "title",
-    <p>No results found</p>
+    <p>No results found</p>,
   );
 
   return (
@@ -68,6 +68,7 @@ export default function App() {
           <li key={i}>{p.title}</li>
         ))}
       </ul>
+      {error}
     </div>
   );
 }
@@ -79,21 +80,24 @@ export default function App() {
 const { filterText, filteredData, error, handleFilterChange } = useFilter(
   users,
   "name",
-  <div style={{ color: "red" }}>No users found</div>
+  <div style={{ color: "red" }}>No users found</div>,
 );
 
 return (
   <>
     <input
-      type="text"
+      type="search"
       placeholder="Search users"
       value={filterText}
       onChange={handleFilterChange}
     />
 
-    {filteredData.length === 0
-      ? error
-      : filteredData.map((u) => <p key={u.id}>{u.name}</p>)}
+    <ul>
+      {filteredData.map((p, i) => (
+        <li key={i}>{p.title}</li>
+      ))}
+    </ul>
+    {error}
   </>
 );
 ```
