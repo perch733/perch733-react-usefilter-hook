@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+"use client";
+
+import { useState, useMemo } from "react";
 import type { ChangeEvent } from "react";
 
 /**
@@ -26,7 +28,7 @@ function normalizarTexto(texto: string): string {
  *
  * ✔ Permite filtrar un array (data) según un campo específico (key)
  * ✔ Devuelve:
- *    - filterText → texto escrito por el usuario
+ *    - filterText → texto escrito por el usuario (raw)
  *    - filteredData → lista filtrada
  *    - error → componente mostrado cuando no hay resultados
  *    - handleFilterChange → manejador para input de búsqueda
@@ -73,30 +75,31 @@ export const useFilter = <T,>(
   errorComponent: React.ReactNode
 ): UseFilterReturn<T> => {
   const [filterText, setFilterText] = useState<string>("");
-  const [filteredData, setFilteredData] = useState<T[]>(data);
-  const [error, setError] = useState<React.ReactNode>(null);
 
   /** Maneja el texto que escribe el usuario en el input */
   const handleFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const searchText = normalizarTexto(e.target.value);
-    setFilterText(searchText);
+    setFilterText(e.target.value);
   };
 
-  /** Filtra la lista cada vez que cambia el texto o los datos */
-  useEffect(() => {
-    const filteredItems = data.filter((item) => {
+  /** Filtra la lista de forma eficiente usando useMemo */
+  const { filteredData, error } = useMemo(() => {
+    // Si no hay texto, devolvemos todo sin error
+    if (!filterText) {
+      return { filteredData: data, error: null };
+    }
+
+    const searchText = normalizarTexto(filterText);
+    
+    const filtered = data.filter((item) => {
       const valorCampo = String(item[key]);
-      return normalizarTexto(valorCampo).includes(filterText);
+      return normalizarTexto(valorCampo).includes(searchText);
     });
 
-    setFilteredData(filteredItems);
-
-    if (filteredItems.length === 0 && filterText !== "") {
-      setError(errorComponent);
-    } else {
-      setError(null);
-    }
-  }, [data, filterText, key]);
+    return {
+      filteredData: filtered,
+      error: filtered.length === 0 ? errorComponent : null
+    };
+  }, [data, filterText, key, errorComponent]);
 
   return {
     filterText,

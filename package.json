@@ -1,6 +1,6 @@
 {
   "name": "@perch33/react-usefilter-hook",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight and reusable React hook for filtering lists with accent normalization, punctuation removal and TypeScript support.",
   "main": "dist/cjs/index.min.js",
   "module": "dist/esm/index.min.js",
@@ -19,6 +19,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "test": "vitest run",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && terser dist/cjs/index.js -o dist/cjs/index.min.js --compress --mangle && terser dist/esm/index.js -o dist/esm/index.min.js --compress --mangle"
   },
@@ -53,10 +54,13 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.1",
     "@types/react": "^18.3.21",
     "@types/react-dom": "^18.3.7",
+    "jsdom": "^27.4.0",
     "rimraf": "^6.0.1",
+    "terser": "^5.39.2",
     "typescript": "^5.8.3",
-    "terser": "^5.39.2"
+    "vitest": "^4.0.17"
   }
 }

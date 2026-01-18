@@ -7,6 +7,7 @@ Ideal for search bars, dynamic lists, admin dashboards, e-commerce filters, etc.
 ![downloads](https://img.shields.io/npm/dm/@perch33/react-usefilter-hook)
 ![license](https://img.shields.io/npm/l/@perch33/react-usefilter-hook)
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
+![Next.js](https://img.shields.io/badge/Next.js-App%20Router%20Ready-black)
 
 ---
 
@@ -16,6 +17,7 @@ Ideal for search bars, dynamic lists, admin dashboards, e-commerce filters, etc.
 - ✂️ Removes punctuation and special characters
 - 🔎 Case-insensitive search
 - ⚛️ Fully typed with TypeScript
+- 🚀 **Next.js App Router Compatible** (`"use client"` included)
 - 🔁 Auto-updates when `data` changes
 - 🔧 Accepts custom error component
 - 🧩 Framework-agnostic, works in any React project
